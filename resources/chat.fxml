@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="600" prefWidth="900" styleClass="chat-root"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="client.controllers.ChatController">
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox prefWidth="260" styleClass="chat-sidebar">
+            <!-- Sidebar Header -->
+            <HBox styleClass="chat-sidebar-header" alignment="CENTER_LEFT" spacing="10">
+                <Label text="💬" style="-fx-font-size: 22px;"/>
+                <Label text="Contacts" styleClass="chat-sidebar-title" HBox.hgrow="ALWAYS"/>
+                <Button text="✕" onAction="#onLogout" styleClass="logout-btn"/>
+            </HBox>
+
+            <!-- User List -->
+            <ListView fx:id="usersList" styleClass="user-list" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER CHAT AREA -->
+    <center>
+        <VBox>
+            <!-- Chat Header -->
+            <HBox styleClass="chat-header" alignment="CENTER_LEFT" spacing="10">
+                <VBox>
+                    <Label fx:id="contactNameLabel" text="Sélectionnez un contact" styleClass="chat-contact-name"/>
+                    <Label fx:id="contactStatusLabel" text="" styleClass="chat-contact-status"/>
+                </VBox>
+            </HBox>
+
+            <!-- Messages Area -->
+            <ScrollPane fx:id="chatScrollPane" fitToWidth="true" styleClass="chat-scroll" VBox.vgrow="ALWAYS">
+                <VBox fx:id="chatBox" styleClass="chat-messages" spacing="4">
+                    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                </VBox>
+            </ScrollPane>
+
+            <!-- Typing Indicator -->
+            <Label fx:id="typingLabel" text="" styleClass="typing-label"/>
+
+            <!-- Input Bar -->
+            <HBox styleClass="chat-input-bar" spacing="10" alignment="CENTER">
+                <Button text="📎" onAction="#onAttachFile" styleClass="attach-btn" style="-fx-cursor: hand;"/>
+                <TextField fx:id="messageField" promptText="Tapez votre message..." styleClass="chat-input" HBox.hgrow="ALWAYS" onAction="#onSendMessage"/>
+                <Button text="➤" onAction="#onSendMessage" styleClass="chat-send-btn"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM STATUS BAR -->
+    <bottom>
+        <HBox styleClass="status-bar" alignment="CENTER_LEFT">
+            <Label fx:id="statusLabel" text="Connecté" styleClass="status-label status-online"/>
+        </HBox>
+    </bottom>
+</BorderPane>
