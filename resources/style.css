@@ -1,0 +1,508 @@
+/* ============================================
+   MESSAGERIE APP - PREMIUM DARK THEME
+   WhatsApp-inspired modern design
+   ============================================ */
+
+/* === ROOT & GLOBAL === */
+.root {
+    -fx-font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* === COLOR PALETTE === */
+* {
+    -primary: #1F2C33;
+    -secondary: #111B21;
+    -accent: #00A884;
+    -accent-hover: #06CF9C;
+    -accent-dark: #008F72;
+    -surface: #202C33;
+    -surface-light: #2A3942;
+    -text-primary: #E9EDEF;
+    -text-secondary: #8696A0;
+    -text-muted: #667781;
+    -border: #313D45;
+    -danger: #F15C6D;
+    -danger-hover: #E8404E;
+    -message-out: #008069;
+    /* Vert WhatsApp plus vif */
+    -message-in: #323E45;
+    /* Gris plus clair pour être visible */
+    -text-muted: #A0B0B9;
+    -shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* === SPLASH SCREEN === */
+.splash-root {
+    -fx-background-color: linear-gradient(to bottom, #111B21, #0B141A);
+}
+
+.splash-title {
+    -fx-text-fill: -text-primary;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 168, 132, 0.4), 20, 0, 0, 2);
+}
+
+.splash-subtitle {
+    -fx-text-fill: -text-secondary;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
+
+.splash-status {
+    -fx-text-fill: -text-muted;
+    -fx-font-size: 12px;
+}
+
+.splash-progress .track {
+    -fx-background-color: -surface-light;
+    -fx-background-radius: 10;
+    -fx-pref-height: 6;
+}
+
+.splash-progress .bar {
+    -fx-background-color: linear-gradient(to right, -accent, -accent-hover);
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+}
+
+.splash-icon {
+    -fx-text-fill: -accent;
+    -fx-font-size: 64px;
+}
+
+.splash-version {
+    -fx-text-fill: -text-muted;
+    -fx-font-size: 11px;
+}
+
+/* === AUTH SCREENS (Login / Register) === */
+.auth-root {
+    -fx-background-color: linear-gradient(to bottom right, #111B21, #0B141A);
+}
+
+.auth-card {
+    -fx-background-color: rgba(32, 44, 51, 0.85);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(49, 61, 69, 0.5);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 30, 0, 0, 8);
+    -fx-padding: 40;
+}
+
+.auth-title {
+    -fx-text-fill: -text-primary;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.auth-subtitle {
+    -fx-text-fill: -text-secondary;
+    -fx-font-size: 13px;
+}
+
+.auth-label {
+    -fx-text-fill: -text-secondary;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 4 2;
+}
+
+.auth-field {
+    -fx-background-color: -input-bg;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: -border;
+    -fx-border-width: 1;
+    -fx-text-fill: -text-primary;
+    -fx-prompt-text-fill: -text-muted;
+    -fx-padding: 12 16;
+    -fx-font-size: 14px;
+}
+
+.auth-field:focused {
+    -fx-border-color: -accent;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0, 168, 132, 0.2), 12, 0, 0, 0);
+}
+
+.auth-btn-primary {
+    -fx-background-color: -accent;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 32;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 168, 132, 0.3), 8, 0, 0, 2);
+}
+
+.auth-btn-primary:hover {
+    -fx-background-color: -accent-hover;
+    -fx-effect: dropshadow(gaussian, rgba(6, 207, 156, 0.4), 12, 0, 0, 3);
+}
+
+.auth-btn-primary:pressed {
+    -fx-background-color: -accent-dark;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 4, 0, 0, 1);
+}
+
+.auth-link {
+    -fx-text-fill: -accent;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.auth-link:hover {
+    -fx-text-fill: -accent-hover;
+}
+
+.auth-error {
+    -fx-text-fill: -danger;
+    -fx-font-size: 12px;
+    -fx-padding: 4 0 0 0;
+}
+
+.auth-divider {
+    -fx-border-color: -border;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 8 0;
+}
+
+/* === CHAT SCREEN === */
+.chat-root {
+    -fx-background-color: -secondary;
+}
+
+/* Sidebar */
+.chat-sidebar {
+    -fx-background-color: -primary;
+    -fx-border-color: -border;
+    -fx-border-width: 0 1 0 0;
+}
+
+.chat-sidebar-header {
+    -fx-background-color: -surface;
+    -fx-padding: 12 16;
+    -fx-border-color: -border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.chat-sidebar-title {
+    -fx-text-fill: -text-primary;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.chat-search {
+    -fx-background-color: -input-bg;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: transparent;
+    -fx-text-fill: -text-primary;
+    -fx-prompt-text-fill: -text-muted;
+    -fx-padding: 8 12;
+    -fx-font-size: 13px;
+}
+
+.chat-search:focused {
+    -fx-border-color: -accent;
+    -fx-border-width: 1;
+}
+
+/* User List */
+.user-list {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.user-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-primary;
+    -fx-padding: 12 16;
+    -fx-border-color: -border;
+    -fx-border-width: 0 0 1 0;
+    -fx-font-size: 14px;
+}
+
+.user-list .list-cell:hover {
+    -fx-background-color: -surface-light;
+}
+
+.user-list .list-cell:selected {
+    -fx-background-color: -surface;
+    -fx-border-color: -accent;
+    -fx-border-width: 0 0 0 3;
+}
+
+.user-list .list-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Chat Area */
+.chat-header {
+    -fx-background-color: -surface;
+    -fx-padding: 12 20;
+    -fx-border-color: -border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.chat-contact-name {
+    -fx-text-fill: -text-primary;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.chat-contact-status {
+    -fx-text-fill: -accent;
+    -fx-font-size: 12px;
+}
+
+/* Chat Messages Area */
+.chat-scroll {
+    -fx-background-color: transparent;
+    -fx-background: -secondary;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.chat-scroll>.viewport {
+    -fx-background-color: -secondary;
+}
+
+.chat-messages {
+    -fx-background-color: -secondary;
+}
+
+/* === MESSAGE BUBBLES === */
+.msg-bubble-out {
+    -fx-background-color: -message-out;
+    -fx-background-radius: 12 2 12 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0, 0, 1);
+}
+
+.msg-bubble-in {
+    -fx-background-color: -surface-light;
+    -fx-background-radius: 2 12 12 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0, 0, 1);
+}
+
+.msg-content {
+    -fx-text-fill: -text-primary;
+    -fx-font-size: 14px;
+}
+
+.msg-time {
+    -fx-text-fill: -text-muted;
+    -fx-font-size: 11px;
+}
+
+.msg-sender {
+    -fx-text-fill: -accent;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Statut envoyé ✓ */
+.status-envoye {
+    -fx-text-fill: -text-muted;
+}
+
+/* Statut reçu ✓✓ */
+.status-recu {
+    -fx-text-fill: -text-secondary;
+}
+
+/* Statut lu ✓✓ bleu */
+.status-lu {
+    -fx-text-fill: #53BDEB;
+}
+
+/* === SEPARATEURS === */
+.date-separator {
+    -fx-background-color: rgba(42, 57, 66, 0.9);
+    -fx-background-radius: 8;
+    -fx-text-fill: -text-secondary;
+    -fx-font-size: 12px;
+    -fx-padding: 4 12;
+}
+
+.unread-separator {
+    -fx-background-color: rgba(0, 168, 132, 0.2);
+    -fx-background-radius: 8;
+    -fx-text-fill: -accent;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 16;
+}
+
+.chat-input-bar {
+    -fx-background-color: -surface;
+    -fx-padding: 10 16;
+    -fx-border-color: -border;
+    -fx-border-width: 1 0 0 0;
+}
+
+.chat-input {
+    -fx-background-color: -input-bg;
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: transparent;
+    -fx-text-fill: -text-primary;
+    -fx-prompt-text-fill: -text-muted;
+    -fx-padding: 10 18;
+    -fx-font-size: 14px;
+}
+
+.chat-input:focused {
+    -fx-border-color: -accent;
+    -fx-border-width: 1;
+}
+
+.chat-send-btn {
+    -fx-background-color: -accent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-max-width: 44;
+    -fx-max-height: 44;
+    -fx-background-radius: 22;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 168, 132, 0.3), 6, 0, 0, 2);
+}
+
+.chat-send-btn:hover {
+    -fx-background-color: -accent-hover;
+    -fx-effect: dropshadow(gaussian, rgba(6, 207, 156, 0.4), 10, 0, 0, 3);
+}
+
+.chat-send-btn:pressed {
+    -fx-background-color: -accent-dark;
+}
+
+/* Status bar */
+.status-bar {
+    -fx-background-color: -surface;
+    -fx-padding: 6 16;
+    -fx-border-color: -border;
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-label {
+    -fx-text-fill: -text-muted;
+    -fx-font-size: 11px;
+}
+
+.status-online {
+    -fx-text-fill: -accent;
+}
+
+.status-offline {
+    -fx-text-fill: -danger;
+}
+
+/* Logout button */
+.logout-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -danger;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 4 8;
+    -fx-background-radius: 6;
+}
+
+.logout-btn:hover {
+    -fx-background-color: rgba(241, 92, 109, 0.15);
+}
+
+/* === SCROLLBAR STYLING === */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: -scrollbar;
+    -fx-background-radius: 10;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: derive(-scrollbar, 20%);
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+/* === TOOLTIP === */
+.tooltip {
+    -fx-background-color: -surface-light;
+    -fx-text-fill: -text-primary;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+    -fx-padding: 6 10;
+}
+
+/* === TYPING INDICATOR === */
+.typing-label {
+    -fx-text-fill: -accent;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+    -fx-padding: 2 20 2 20;
+    -fx-background-color: transparent;
+}
+
+/* === ATTACH FILE BUTTON === */
+.attach-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-muted;
+    -fx-font-size: 18px;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-max-width: 40;
+    -fx-max-height: 40;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+.attach-btn:hover {
+    -fx-background-color: -surface-light;
+    -fx-text-fill: -accent;
+}
+
+/* === GROUP BUTTON === */
+.group-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-muted;
+    -fx-font-size: 14px;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+    -fx-max-width: 32;
+    -fx-max-height: 32;
+    -fx-background-radius: 16;
+    -fx-cursor: hand;
+}
+
+.group-btn:hover {
+    -fx-background-color: -surface-light;
+    -fx-text-fill: -accent;
+}
