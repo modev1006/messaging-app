@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane prefWidth="500" prefHeight="400" styleClass="splash-root"
+           xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="client.controllers.SplashController">
+
+    <VBox alignment="CENTER" spacing="20" maxWidth="360">
+        <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+        <!-- Icon -->
+        <Label text="💬" styleClass="splash-icon"/>
+
+        <!-- Title -->
+        <Label text="Messagerie" styleClass="splash-title"/>
+
+        <!-- Subtitle -->
+        <Label text="Communication sécurisée en temps réel" styleClass="splash-subtitle"/>
+
+        <!-- Spacer -->
+        <Region prefHeight="20"/>
+
+        <!-- Progress Bar -->
+        <ProgressBar fx:id="progressBar" prefWidth="280" styleClass="splash-progress"/>
+
+        <!-- Status Label -->
+        <Label fx:id="statusLabel" text="Initialisation..." styleClass="splash-status"/>
+
+        <!-- Spacer -->
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <!-- Version -->
+        <Label text="v1.0.0 — Projet ISIL3" styleClass="splash-version"/>
+    </VBox>
+</StackPane>
