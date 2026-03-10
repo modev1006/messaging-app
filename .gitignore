@@ -1,9 +1,21 @@
 # Build output
 target/
+build/
+out/
 
-# IDE
+# IDE - IntelliJ
 .idea/
 *.iml
+*.iws
+*.ipr
+
+# IDE - VS Code
+.vscode/
+
+# IDE - Eclipse
+.settings/
+.project
+.classpath
 
 # OS
 .DS_Store
@@ -11,3 +23,8 @@ Thumbs.db
 
 # Logs
 *.log
+logs/
+
+# Secrets & Config
+.env
+local.properties

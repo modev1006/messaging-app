@@ -1,5 +1,5 @@
 package model;
 
 public enum MessageStatus {
-    SENT, DELIVERED, READ
+    ENVOYE, RECU, LU, SENT, DELIVERED, READ
 }
